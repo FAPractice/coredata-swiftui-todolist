@@ -18,20 +18,15 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(items) { item in
-                        Group {
-                            HStack {
-                                Button {
-                                    markCompleted(item)
-                                } label: {
-                                    Label("", systemImage: item.completed ? "checkmark.seal.fill" :  "checkmark.seal")
-                                }
-                                if item.completed {
-                                    Text(item.unwrappedText)
-                                        .strikethrough()
-                                        .foregroundColor(.secondary)
-                                } else {
-                                    Text(item.unwrappedText)
-                                }
+                        HStack {
+                            Image(systemName: item.completed ? "checkmark.seal.fill" :  "checkmark.seal").foregroundColor(.accentColor)
+                                .onTapGesture{ markCompleted(item) }
+                            if item.completed {
+                                Text(item.unwrappedText)
+                                    .strikethrough()
+                                    .foregroundColor(.secondary)
+                            } else {
+                                Text(item.unwrappedText)
                             }
                         }
                         .swipeActions(edge: .leading, allowsFullSwipe: true) {
@@ -39,11 +34,16 @@ struct ContentView: View {
                                 markCompleted(item)
                             } label: {
                                 Label("Complete", systemImage: item.completed ? "checkmark.seal.fill" :  "checkmark.seal")
-                            }
-                            
+                            }.tint(.accentColor)
+                        }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            Button {
+                                deleteItem(item)
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }.tint(.red)
                         }
                     }
-                    .onDelete(perform: deleteItem)
                 }
                 HStack {
                     TextField("Enter Task", text: $addText)
@@ -81,6 +81,11 @@ struct ContentView: View {
             moc.delete(item)
         }
         
+        try? moc.save()
+    }
+    
+    func deleteItem(_ item: Item) {
+        moc.delete(item)
         try? moc.save()
     }
     
