@@ -17,8 +17,24 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(items) {
-                        Text($0.unwrappedText)
+                    ForEach(items) { item in
+                        Group {
+                            if item.completed {
+                                Text(item.unwrappedText)
+                                    .strikethrough()
+                                    .foregroundColor(.secondary)
+                            } else {
+                                Text(item.unwrappedText)
+                            }
+                        }
+                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            Button {
+                                markCompleted(item)
+                            } label: {
+                                Label("Complete", systemImage: "checkmark.seal.fill")
+                            }
+                            
+                        }
                     }
                     .onDelete(perform: deleteItem)
                 }
@@ -57,6 +73,12 @@ struct ContentView: View {
             let item = items[index]
             moc.delete(item)
         }
+        
+        try? moc.save()
+    }
+    
+    func markCompleted(_ item: Item) {
+        item.completed = !item.completed
         
         try? moc.save()
     }
