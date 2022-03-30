@@ -44,6 +44,7 @@ struct ContentView: View {
                             }.tint(.red)
                         }
                     }
+                    .onDelete(perform: deleteItem)
                 }
                 HStack {
                     TextField("Enter Task", text: $addText)
