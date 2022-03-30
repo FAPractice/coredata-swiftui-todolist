@@ -19,19 +19,26 @@ struct ContentView: View {
                 List {
                     ForEach(items) { item in
                         Group {
-                            if item.completed {
-                                Text(item.unwrappedText)
-                                    .strikethrough()
-                                    .foregroundColor(.secondary)
-                            } else {
-                                Text(item.unwrappedText)
+                            HStack {
+                                Button {
+                                    markCompleted(item)
+                                } label: {
+                                    Label("", systemImage: item.completed ? "checkmark.seal.fill" :  "checkmark.seal")
+                                }
+                                if item.completed {
+                                    Text(item.unwrappedText)
+                                        .strikethrough()
+                                        .foregroundColor(.secondary)
+                                } else {
+                                    Text(item.unwrappedText)
+                                }
                             }
                         }
                         .swipeActions(edge: .leading, allowsFullSwipe: true) {
                             Button {
                                 markCompleted(item)
                             } label: {
-                                Label("Complete", systemImage: "checkmark.seal.fill")
+                                Label("Complete", systemImage: item.completed ? "checkmark.seal.fill" :  "checkmark.seal")
                             }
                             
                         }
