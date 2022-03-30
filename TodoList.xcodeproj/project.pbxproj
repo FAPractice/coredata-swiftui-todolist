@@ -15,6 +15,12 @@
 		348C03E127F41D8D0093C57D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348C03CE27F41D8D0093C57D /* Assets.xcassets */; };
 		348C03EC27F4201C0093C57D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 348C03EA27F4201C0093C57D /* Model.xcdatamodeld */; };
 		348C03ED27F4201C0093C57D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 348C03EA27F4201C0093C57D /* Model.xcdatamodeld */; };
+		348C03FB27F423630093C57D /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C03FA27F423630093C57D /* Controller.swift */; };
+		348C03FC27F423630093C57D /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C03FA27F423630093C57D /* Controller.swift */; };
+		348C040527F424930093C57D /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C040327F424930093C57D /* Item+CoreDataClass.swift */; };
+		348C040627F424930093C57D /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C040327F424930093C57D /* Item+CoreDataClass.swift */; };
+		348C040727F424930093C57D /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C040427F424930093C57D /* Item+CoreDataProperties.swift */; };
+		348C040827F424930093C57D /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C040427F424930093C57D /* Item+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,9 @@
 		348C03D927F41D8D0093C57D /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348C03DB27F41D8D0093C57D /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		348C03EB27F4201C0093C57D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		348C03FA27F423630093C57D /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		348C040327F424930093C57D /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		348C040427F424930093C57D /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +57,8 @@
 		348C03C627F41D8A0093C57D = {
 			isa = PBXGroup;
 			children = (
+				348C040327F424930093C57D /* Item+CoreDataClass.swift */,
+				348C040427F424930093C57D /* Item+CoreDataProperties.swift */,
 				348C03CB27F41D8A0093C57D /* Shared */,
 				348C03DA27F41D8D0093C57D /* macOS */,
 				348C03D427F41D8D0093C57D /* Products */,
@@ -57,6 +68,7 @@
 		348C03CB27F41D8A0093C57D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				348C03FA27F423630093C57D /* Controller.swift */,
 				348C03CC27F41D8A0093C57D /* TodoListApp.swift */,
 				348C03CD27F41D8A0093C57D /* ContentView.swift */,
 				348C03EA27F4201C0093C57D /* Model.xcdatamodeld */,
@@ -180,8 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348C040727F424930093C57D /* Item+CoreDataProperties.swift in Sources */,
+				348C040527F424930093C57D /* Item+CoreDataClass.swift in Sources */,
 				348C03DE27F41D8D0093C57D /* ContentView.swift in Sources */,
 				348C03DC27F41D8D0093C57D /* TodoListApp.swift in Sources */,
+				348C03FB27F423630093C57D /* Controller.swift in Sources */,
 				348C03EC27F4201C0093C57D /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,8 +205,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348C040827F424930093C57D /* Item+CoreDataProperties.swift in Sources */,
+				348C040627F424930093C57D /* Item+CoreDataClass.swift in Sources */,
 				348C03DF27F41D8D0093C57D /* ContentView.swift in Sources */,
 				348C03DD27F41D8D0093C57D /* TodoListApp.swift in Sources */,
+				348C03FC27F423630093C57D /* Controller.swift in Sources */,
 				348C03ED27F4201C0093C57D /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
